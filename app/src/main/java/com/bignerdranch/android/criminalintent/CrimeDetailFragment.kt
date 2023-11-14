@@ -150,9 +150,9 @@ class CrimeDetailFragment : Fragment() {
                 crimeTitle.setText(crime.title)
             }
 
-            // In here we can change the following to Locale.getDefault() to get the default format
-            val dateformat = DateFormat.getBestDateTimePattern(Locale.JAPANESE, DATE_FORMAT)
-            val df = SimpleDateFormat(dateformat, Locale.JAPANESE)
+            // In here we can change the following to Locale.JAPANESE to get the Japanese Language
+            val dateformat = DateFormat.getBestDateTimePattern(Locale.getDefault(), DATE_FORMAT)
+            val df = SimpleDateFormat(dateformat, Locale.getDefault())
             crimeDate.text = df.format(crime.date).toString()
             var dateText = crime.date.toString()
             crimeDate.setOnClickListener {
@@ -199,7 +199,7 @@ class CrimeDetailFragment : Fragment() {
         }
 
         // In here we can change the following to Locale.getDefault() to get the default format
-        val df = DateFormat.getBestDateTimePattern(Locale.JAPANESE, DATE_FORMAT)
+        val df = DateFormat.getBestDateTimePattern(Locale.getDefault(), DATE_FORMAT)
         val dateString = df.format(crime.date)
         val suspectText = if (crime.suspect.isBlank()) {
             getString(R.string.crime_report_no_suspect)

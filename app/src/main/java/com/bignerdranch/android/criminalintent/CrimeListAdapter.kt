@@ -19,8 +19,8 @@ class CrimeHolder(
         binding.crimeTitle.text = crime.title
 
         // In here we can change the following to Locale.getDefault() to get the default format
-        val dateformat = DateFormat.getBestDateTimePattern(Locale.JAPANESE, DATE_FORMAT)
-        val df = SimpleDateFormat(dateformat, Locale.JAPANESE)
+        val dateformat = DateFormat.getBestDateTimePattern(Locale.getDefault(), DATE_FORMAT)
+        val df = SimpleDateFormat(dateformat, Locale.getDefault())
         val formattedDate =  df.format(crime.date).toString()
         binding.crimeDate.text = formattedDate
 
@@ -51,7 +51,7 @@ class CrimeListAdapter(
 
     override fun onBindViewHolder(holder: CrimeHolder, position: Int) {
         val crime = crimes[position]
-        val df = DateFormat.getBestDateTimePattern(Locale.JAPANESE, DATE_FORMAT)
+        val df = DateFormat.getBestDateTimePattern(Locale.getDefault(), DATE_FORMAT)
         val formattedDate = df.format(crime.date)
         holder.bind(crime, onCrimeClicked)
     }
