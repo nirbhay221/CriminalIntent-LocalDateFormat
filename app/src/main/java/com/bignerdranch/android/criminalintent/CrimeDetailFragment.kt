@@ -29,8 +29,8 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+private const val DATE_FORMAT = "EEE, MMM dd, yyyy HH:mm:ss z"
 
-private const val DATE_FORMAT = "EEE, MMM, dd z"
 
 class CrimeDetailFragment : Fragment() {
 

@@ -9,8 +9,8 @@ import com.bignerdranch.android.criminalintent.databinding.ListItemCrimeBinding
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.UUID
+private const val DATE_FORMAT = "EEE, MMM dd, yyyy HH:mm:ss z"
 
-private const val DATE_FORMAT = "EEE, MMM, dd z"
 
 class CrimeHolder(
     private val binding: ListItemCrimeBinding
